@@ -1,0 +1,58 @@
+1. The delivery is a single zip file containing a folder named ArcadeNexus.
+2. The folder contains the file index.html with no spaces or different casing.
+3. The folder contains the file styles.css with no spaces or different casing.
+4. The folder contains the file app.js with no spaces or different casing.
+5. The folder contains the file games.js with no spaces or different casing.
+6. The folder contains the file README.md with no spaces or different casing.
+7. The folder contains an assets folder containing an images folder and an audio folder.
+8. The assets images folder contains the logo.svg file.
+9. The assets images folder contains the ttt_card.png file.
+10. The assets images folder contains the snake_card.png file.
+11. The assets images folder contains the memory_card.png file.
+12. The assets audio folder contains the click.mp3 file.
+13. The assets audio folder contains the score.mp3 file.
+14. The assets audio folder contains the gameover.mp3 file.
+15. The assets audio folder contains the cyber_beats.mp3 file.
+16. The index.html file uses semantic HTML tags including header, main, section, article, and footer.
+17. The index.html file does not import any external framework script including React, Vue, or jQuery.
+18. The HTML code has no inline JavaScript event handlers in the markup.
+19. All image tags in index.html contain a non empty alt attribute.
+20. The styles.css file defines CSS variables in the root selector for the four brand colors.
+21. The background color of the body selector is defined as #0B0C10.
+22. The card containers and borders use the color #1F2933.
+23. Glowing highlights and text highlights use the color #66FCF1.
+24. Passive buttons and subtext elements use the color #45A29E.
+25. Headings and logos use the Orbitron Google Font.
+26. Body text and dashboard stats tables use the Inter Google Font.
+27. The layout shifts elements dynamically across screen sizes using CSS Grid or Flexbox.
+28. The game selection grid contains three individual cards.
+29. The site remains fully readable at mobile viewport widths under 576 pixels.
+30. The dashboard displays the total games played across all games.
+31. The dashboard displays the win loss and draw counts for the Tic Tac Toe game.
+32. The dashboard displays the highest score achieved in the Snake game.
+33. The dashboard displays the best moves score achieved in the Memory Match game.
+34. The dashboard has a button labeled Reset Statistics that clears stats from the dashboard.
+35. The Reset Statistics button clears the localStorage key named arcadenexus_stats.
+36. Clicking a game card triggers a modal window that overlays the screen.
+37. The game modal window has a close button that closes the modal.
+38. The Tic Tac Toe game features a 3x3 board layout.
+39. The Tic Tac Toe game allows the player to make a move only in empty squares.
+40. The Tic Tac Toe computer opponent makes moves automatically after the player turns.
+41. The Tic Tac Toe game displays a text notification when the player wins.
+42. The Tic Tac Toe game displays a text notification when a draw occurs.
+43. The Snake game renders the game board inside an HTML5 canvas element.
+44. The Snake game registers WASD or arrow keys for direction control.
+45. The Snake length increases when the head touches the food position.
+46. The Snake game speed increases after every five food items are eaten.
+47. The Snake game triggers a game over screen when the head collides with boundaries.
+48. The Snake game triggers a game over screen when the head collides with its tail.
+49. The Memory Match game displays a grid of sixteen cards.
+50. The Memory Match cards flip face up when clicked showing the card content.
+51. The Memory Match cards remain face up when a matching pair is found.
+52. Mismatched Memory Match cards flip face down automatically after a one second delay.
+53. The Memory Match game displays a moves counter that increments with each pair attempt.
+54. The navigation bar features a button to toggle the global sound state.
+55. Disabling sound via the toggle stops the background music cyber_beats.mp3.
+56. Disabling sound via the toggle prevents click.mp3 from playing on interactions.
+57. Disabling sound via the toggle prevents score.mp3 from playing on game events.
+58. Disabling sound via the toggle prevents gameover.mp3 from playing at the end of games.

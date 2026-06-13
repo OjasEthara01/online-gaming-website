@@ -1,0 +1,20 @@
+ArcadeNexus - Scope of Work
+Category: Web Development
+
+1. IN-SCOPE REQUIREMENTS:
+- Responsive Single-Page Layout: A highly polished landing page with a unified header (navigation bar), hero section, responsive game catalog grid, user stats dashboard section, gameplay modal window, and footer.
+- Visual Identity & Design System: Dark-mode gaming aesthetic featuring neon color accents, glassmorphic card overlays, custom fonts (Google Fonts: Orbitron for gaming headlines, Inter for body copy), and smooth CSS transitions.
+- Interactive Game Catalog: A dynamic grid displaying game cards with custom hover effects, icons, descriptions, and "Play Now" triggers.
+- Core Game Development (3 playable client-side games):
+  * Tic-Tac-Toe: Interactive 3x3 grid supporting player vs. local computer AI, win/loss/tie detection, and score updates.
+  * Snake: Canvas-based rendering, smooth movement control (arrow keys / swipe), food spawning, self-collision, wall-collision game over, and speed scaling as score increases.
+  * Memory Match: A 4x4 card grid featuring card flip CSS animations, match checking, score/moves tracker, and board reset.
+- Statistics Dashboard: Local persistence of user data utilizing the browser's localStorage API, tracking total games played, wins/losses/ties, high scores per game, and average moves/scores.
+- Client-Side Modals: Seamless modal overlay for playing selected games without navigating away from the main dashboard, including standard close, restart, and sound toggle controls.
+
+2. OUT-OF-SCOPE ITEMS (EXCLUDED):
+- Multiplayer Networking: Real-time multiplayer synchronization or lobby matchmaking using WebSockets, WebRTC, or Socket.io.
+- Server-Side Backend: Server databases (MongoDB, PostgreSQL, MySQL), backend runtime environments (Node.js, Express, Python, PHP), or server-side API integration.
+- Authentication & Accounts: Account registration, email verification, password recovery, or cloud-based user profiles.
+- Commercial Payment Systems: Integration of payment gateways, credit card processing, digital wallets, or real-money gaming/betting.
+- 3D Graphics: Complex 3D game engines (Three.js, WebGL, Unity WebGL) or external game framework wrappers (Phaser.js).
