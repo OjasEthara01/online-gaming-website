@@ -1,119 +1,118 @@
-# ArcadeNexus: Online Gaming Platform (Enhanced Developer Specification & Verification Guide)
+# ArcadeNexus: Online Gaming Platform (Developer Specification & Verification Guide)
 
 ## 1. Project Overview
 
-### 1.1 Executive Summary
-ArcadeNexus is a next-generation retro-inspired online gaming platform designed to run in any modern web browser. The platform serves as an interactive, single-page casual gaming portal containing a responsive navigation system, landing page hero, games directory catalog, and a central user statistics dashboard. The portal hosts three fully client-side games (Tic-Tac-Toe, Snake, and Memory Match) running inside overlay modals. Player metrics must persist offline across browser sessions utilizing the HTML5 Web Storage API (`localStorage`), eliminating the requirement for complex backend databases or remote APIs.
+### 1.1 Summary
+ArcadeNexus is a simple online gaming website. The site runs in any web browser and contains three simple games: Tic-Tac-Toe, Snake, and Memory Match. These games open and play in popup windows (modals). The website tracks user scores and total games played. It saves these scores on the user's computer using the browser's localStorage. The website is built using standard HTML, CSS, and JavaScript.
 
 ### 1.2 Core Deliverables
-The final submission package must compile to the following files organized inside the `ArcadeNexus/` root directory:
-1. `index.html`: The structural backbone of the platform, built using modern Semantic HTML5 tags.
-2. `styles.css`: Visual styling framework utilizing CSS variables, responsive design rules, glassmorphic overlays, and CSS transitions.
-3. `app.js`: Main platform controller managing DOM loading, modal overlays, global audio routing, and dashboard statistics calculations.
-4. `games.js`: Modular game loop logic and event-handling code for the three playable client-side mini-games.
-5. `README.md`: System documentation detailing quickstart guidelines, browser compatibility matrix, and asset license disclosures.
-6. `assets/`: Folder holding static graphics and audio assets structured as:
-   * `assets/images/logo.svg`: Brand vector logo.
-   * `assets/images/ttt_card.png`: Tic-Tac-Toe selection card image.
-   * `assets/images/snake_card.png`: Snake selection card image.
-   * `assets/images/memory_card.png`: Memory card selection card image.
-   * `assets/audio/click.mp3`: Standard UI button interaction SFX.
-   * `assets/audio/score.mp3`: Sound triggered when score points are achieved.
-   * `assets/audio/gameover.mp3`: Audio trigger for match/game conclusion.
-   * `assets/audio/cyber_beats.mp3`: Ambient electronic looped background track.
+The developer must deliver these files inside a folder named `ArcadeNexus/`:
+1. `index.html`: The layout of the website using semantic HTML tags.
+2. `styles.css`: The styling sheet containing the color variables, mobile layouts, and card hover effects.
+3. `app.js`: Main JavaScript file to manage the layout, popup windows, mute settings, and statistics updates.
+4. `games.js`: JavaScript file containing the logic for the three games.
+5. `README.md`: Text documentation explaining how to open the site, check the games, and list file license sources.
+6. `assets/`: Folder holding the brand images and audio files:
+   * `assets/images/logo.svg`: Brand logo.
+   * `assets/images/ttt_card.png`: Cover card image for Tic-Tac-Toe.
+   * `assets/images/snake_card.png`: Cover card image for Snake.
+   * `assets/images/memory_card.png`: Cover card image for Memory Match.
+   * `assets/audio/click.mp3`: Click sound for buttons and grid cells.
+   * `assets/audio/score.mp3`: Sound played when points are scored or cards are matched.
+   * `assets/audio/gameover.mp3`: Sound played when a game ends.
+   * `assets/audio/cyber_beats.mp3`: Loop background music track.
 
-### 1.3 Target Audience and Persona
-* **Audience Profile:** Casual players, aged 15-45, seeking quick-launch browser games requiring no signup.
-* **Persona Goal:** Immediate load times (under 1 second), seamless transitioning between games, tactile user feedback (sound effects, visual glow transitions), and persistent high score tracking to incentivize replay value.
+### 1.3 Target Audience
+* **Audience:** Casual players looking for quick games in a web browser without creating accounts.
+* **Goals:** Fast loading times, clear button hovers, sound feedback, and persistent scores that stay saved when reloading the page.
 
 ---
 
 ## 2. Layout Structure & UI Architecture
 
-The interface must be designed as a unified single-page layout segmented into five sections:
+The page is a single-page layout with five parts:
 
 ### 2.1 Navigation Bar (Header)
-A structural `<header>` fixed at the top of the viewport. It contains:
-* **Branding Area:** Text logo `ArcadeNexus` set in bold **Orbitron** with a subtle glowing neon teal text shadow.
-* **Anchor Links:** Smooth scrolling anchors pointing to `#games-catalog` and `#stats-dashboard`.
-* **Global Sound Toggle:** An interactive icon button indicating audio status (Speaker Active / Speaker Muted) controlling all playbacks.
+A structural header fixed at the top of the page:
+* **Brand Logo:** The name `ArcadeNexus` in bold Orbitron font with a neon teal shadow glow.
+* **Anchor Links:** Menu buttons pointing to the Catalog grid and the Stats dashboard.
+* **Global Sound Toggle:** An interactive speaker button to turn the background music and sound effects on or off.
 
-### 2.2 Hero Banner Section
-An engaging visual introduction viewport containing:
-* **Main Slogan:** "Level Up Your Leisure" or similar gamer hook text in uppercase Orbitron typography.
-* **Sub-headline:** Quick summary of features in Inter typography.
-* **CTA Button:** Pulsing accent-colored button scrolling users directly to the Games Grid catalog.
-* **Welcome Banner:** Dynamically rendered string greeting return users (e.g., "Welcome back, Player One! Ready to beat your Snake high score of 120?"). If no local stats are detected, default to "Welcome to the Nexus, Guest!"
+### 2.2 Hero Banner
+The introduction area at the top of the viewport:
+* **Main Slogan:** Bold gaming text in Orbitron font.
+* **CTA Button:** Highlighted button that scrolls the page down to the games catalog.
+* **Welcome Message:** Dynamic text greeting return users (e.g., "Welcome back, Player! Ready to beat your Snake high score of 120?"). If no stats are saved, it shows "Welcome to the Nexus, Guest!".
 
 ### 2.3 Games Selection Catalog
-A grid layout displaying three card modules (Tic-Tac-Toe, Snake, Memory Match). Cards must feature:
-* Transparent backdrop surface colors (`rgba` alpha variables) to achieve a glassmorphic aesthetic.
-* Specific cover thumbnail PNGs.
-* A list of key game stats (e.g., wins count, high score).
-* Hover state scaling up the container by `1.03` with a glowing border transition.
-* "Play Now" action buttons triggering overlay modals.
+A grid layout displaying three game cards. Cards feature:
+* Dark card background surfaces matching Cyber Gray.
+* Game cover PNG cards.
+* List of current local scores (wins or high score).
+* Card scale-up animation and cyan glow outlines on hover.
+* "Play Now" action buttons that open the gameplay popup.
 
-### 2.4 Statistics Dashboard Section
-A structured section rendering aggregated localStorage data. Must present:
-* A header reading "NEXUS PERSISTENT CORE" in Orbitron.
-* Tabular metrics columns: Total Games Played, Tic-Tac-Toe win percentage, Snake maximum score, and Memory Match minimum moves.
-* **Reset Stats Button:** Triggers verification alert, wipes the statistics key from memory, and refreshes all metrics on screen to 0 immediately.
+### 2.4 Statistics Dashboard
+A section rendering saved localStorage data:
+* Header reading "NEXUS PERSISTENT CORE" in Orbitron font.
+* Columns displaying: Total Games Played, Tic-Tac-Toe win rate, Snake high score, and Memory Match best moves.
+* **Reset Stats Button:** Triggers a confirmation check, deletes user statistics from localStorage, and updates all numbers on the page to 0 immediately.
 
 ### 2.5 Footer Section
-A footer containing logo branding, system copyright text, and links to the assets licensing documents.
+The bottom section containing copyright details, author name, and brand closing line: *Play instantly, challenge your limits on ArcadeNexus.*
 
 ---
 
-## 3. Brand Identity & Design Token Guidelines
+## 3. Brand Identity & Design Tokens
 
-Developers must use *only* the tokens defined below. Custom style extensions, external font injections, or styling offsets will result in verification failure.
+Developers must use only the tokens defined below.
 
 ### 3.1 Color Tokens Palette
-* **Background Surface (Deep Void):** HEX `#0B0C10` (Primary deep dark background).
-* **Card Fills & Borders (Cyber Gray):** HEX `#1F2833` (Card backdrops, outline strokes, input borders).
-* **Neon Accent (Neon Teal):** HEX `#66FCF1` (Active buttons, focus outlines, text glowing shadows, active game states).
-* **Secondary Brand Accent (Laser Cyan):** HEX `#45A29E` (Subheadings, passive links, border highlights, muted buttons).
+* **Background Surface (Deep Void):** HEX #0B0C10 (Primary background).
+* **Card Fills & Borders (Cyber Gray):** HEX #1F2833 (Card panels, borders, and outlines).
+* **Neon Accent (Neon Teal):** HEX #66FCF1 (Active buttons, focus borders, glow text, active lines).
+* **Secondary Brand Accent (Laser Cyan):** HEX #45A29E (Subheadings, passive text links, passive outlines).
 
 ### 3.2 Typography Tokens
-* **Titles, Logos, Buttons & Counter Headers:** Orbitron (Google Fonts, sans-serif, bold/black weights 700/900).
-* **Content Copy, Metrics Data, Description & Settings:** Inter (Google Fonts, sans-serif, weights 300/400/600).
+* **Titles, Headers, Logos, and Score Counters:** Orbitron (Google Fonts).
+* **Content Copy, Metrics, and Lists:** Inter (Google Fonts).
 
-### 3.3 Visual Motion Standards
-* Card hover transition: `transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease`.
-* Modal transitions: Smooth opacity fade-in (`0` to `1` over `0.25s`) with scaling overlay bounds.
-* All input buttons must feature a scale-down effect (`transform: scale(0.97)`) on click/active states.
+### 3.3 Visual Motion
+* Card hover scale-up: `transform: scale(1.03)` with a smooth 0.3-second transition.
+* Modal popups: Smooth opacity transition from hidden to visible over 0.25 seconds.
+* Active buttons: Press down scale effect (`transform: scale(0.97)`) on click.
 
 ---
 
-## 4. Gameplay Engine Implementations
+## 4. Gameplay Logic & Engines
 
-### 4.1 Tic-Tac-Toe Logic Specifications
-* **Grid:** 3x3 interactive squares initialized as empty values.
-* **Mode:** Single-player VS local Computer AI.
-* **AI Engine:** The AI must run checking routines on every turn:
-  1. *Winning Move:* Check if AI can win immediately.
-  2. *Blocking Move:* Check if Player is one move away from winning and place a block.
-  3. *Random Fallback:* If no block/win exists, select a random remaining empty tile.
-* **State Detection:** Compute grid combinations on turn ends. If a match is found, draw a colored neon line across the grid victory line, lock controls, play `gameover.mp3`, increment stats, and display the win banner. If no moves remain and no line matches, trigger tie game over sequence.
+### 4.1 Tic-Tac-Toe
+* **Grid:** 3x3 layout.
+* **Mode:** Single-player vs computer AI.
+* **AI Logic:** The computer opponent plays automatically:
+  1. *Win:* Plays in a slot to win if two in a row are marked.
+  2. *Block:* Blocks player's double-in-a-row if player is about to win.
+  3. *Fallback:* Plays in a random empty slot if no win or block is available.
+* **Game Over:** Displays win lines, blocks further clicks, plays `gameover.mp3`, and alerts the player.
 
-### 4.2 Snake Engine Specifications
-* **Drawing Canvas:** 2D canvas context set to exactly 400x400 display dimensions.
-* **Controls:** Binds WASD or Arrow Keys. Ignores opposite direction inputs (e.g. going left cannot instantly switch to right).
-* **Speed Scaling:** Initial update loop runs at `100ms`. Every time the snake consumes 5 food objects, the update loop interval must decrease by 5% (increasing update speed), up to a max velocity limit of `40ms`.
-* **Collisions:** If the snake coordinate matches boundary edges or intersects with its own coordinate set, terminate loop, display "GAME OVER" in Orbitron text on screen, and play `gameover.mp3`.
+### 4.2 Snake
+* **Board:** HTML5 canvas element size 400x400.
+* **Controls:** Keyboard arrows or WASD. Opposite directions are ignored.
+* **Speed:** Starts at 100ms refresh rate. Every time 5 food items are eaten, the speed increases by 5%.
+* **Game Over:** Triggers when the head hits canvas boundaries or the snake's tail. Plays `gameover.mp3`.
 
-### 4.3 Memory Match Engine Specifications
-* **Grid Layout:** 4x4 matrix housing 8 distinct pairs (16 cards total).
-* **Shuffle Algorithm:** Must dynamically randomize card placements on initialization using Fisher-Yates shuffle algorithms.
-* **Flipping Action:** Click triggers 3D CSS rotate transform. The board must reject clicks if two cards are already active or if clicking a card already matched.
-* **Matching Rules:** If matching, lock cards face up and play `score.mp3`. If mismatching, allow a 1.0-second delay for user visualization, then flip them back face down.
-* **Moves counter:** Tracks each pair checking event and increments the score panel.
+### 4.3 Memory Match
+* **Board:** 4x4 card layout (16 cards total, 8 matching pairs).
+* **Shuffle:** Cards are randomized using a shuffling function on start.
+* **Flip Logic:** Clicking flips card face up. The game ignores clicks if two cards are already flipped.
+* **Matching:** Matching cards stay face up and play `score.mp3`. Mismatched cards flip back face down after 1 second.
+* **Moves:** A turn counter tracks flip attempts and displays the score.
 
 ---
 
 ## 5. Persistence & localStorage Configuration
 
-All scores and configurations must be saved inside a single JSON string key named `arcadenexus_stats`. 
+All scores must be stored under the localStorage key name `arcadenexus_stats`.
 
 ### 5.1 JSON Storage Schema
 ```json
@@ -145,29 +144,24 @@ All scores and configurations must be saved inside a single JSON string key name
 }
 ```
 
-### 5.2 Read/Write Synchronization Logic
-* **On Load:** Initialize default JSON structure if the `arcadenexus_stats` key does not exist. Read and bind data fields to populate the UI Stats Dashboard and Welcome Hero banner.
-* **On Game Completion:** Game engine increments relevant fields, recalculates ratios, updates `localStorage`, and updates dashboard DOM elements *without* requiring full page reloads.
-
 ---
 
 ## 6. Technical Quality & Acceptance Criteria
 
 ### 6.1 DOM & Code Organization
-* Strictly modular Javascript: Divide UI state management (`app.js`) from game engine states (`games.js`).
-* Avoid polluting global scopes: encapsulate routines in modules or classes.
-* Separation of Concerns: No inline event listeners inside `index.html` (e.g. do not write `<button onclick="play()">`). All listeners must be attached via `addEventListener` in JS code.
+* Separation of concerns: JavaScript controls UI events (`app.js`) and game engines (`games.js`) separately.
+* Separation of HTML/JS: No inline handlers inside index.html (no `onclick`). Binds listeners dynamically.
+* Framework limits: No external framework scripts (React, Vue, jQuery) can be imported.
 
-### 6.2 Responsive Boundaries CSS
-Developers must optimize visual rendering across three distinct breakpoint media queries:
-* **Mobile Viewport (<576px):** Navbar links fold to dropdown or stack vertically. Grid layout maps cards as a single-column block. Game modals scale to 95% width.
-* **Tablet Viewport (576px - 992px):** Grid maps cards in a two-column layout. Navbar lists inline links with reduced margins.
-* **Desktop Viewport (>992px):** Grid maps cards as a three-column horizontal list.
+### 6.2 Layout Breakdown
+* **Mobile (<576px):** Single-column grid cards list, navbar items wrap.
+* **Tablet (576px - 992px):** Two-column cards grid layout.
+* **Desktop (>992px):** Three-column horizontal cards grid.
 
-### 6.3 Sound Level & Audio Routing
-* Background tracks must play at `-20 LUFS` to ensure they sit comfortably under sound effects.
-* SFX (`click.mp3`, `score.mp3`, `gameover.mp3`) must play at `-14 LUFS`.
-* Toggling global sound setting controls active Web Audio API routing nodes, muting all outputs instantly when set.
+### 6.3 Sound Level & Routing
+* Looped background music played at low volume.
+* SFX played at standard volume.
+* Navbar toggle button mutes all audio elements instantly.
 
 ---
 

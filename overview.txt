@@ -1,6 +1,6 @@
 ArcadeNexus - Online Gaming Website
 Category: Web Development
 
-ArcadeNexus is a modern, responsive, retro-inspired online gaming platform designed to run in any modern web browser. The website serves as a premium landing page and catalog for casual games, hosting three fully interactive, client-side HTML5/JavaScript mini-games (Tic-Tac-Toe, Snake, and Memory Match). 
+ArcadeNexus is a simple web page where users can play casual games. It runs in any web browser and contains three simple games: Tic-Tac-Toe, Snake, and Memory Match. 
 
-The platform features a user statistics dashboard that tracks scores, total games played, and achievements locally using the browser's localStorage API, creating an engaging and persistent experience for casual gamers. With a sleek, dark-themed, glassmorphic visual aesthetic, the website is optimized for both mobile devices and desktop displays.
+The website has a dashboard that shows user scores and total games played. It saves these scores on the user's computer using the browser's localStorage. The page uses a dark layout with simple cards for the games. It works on both mobile phones and desktop computers.

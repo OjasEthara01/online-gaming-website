@@ -1,58 +1,30 @@
-1. The delivery is a single zip file containing a folder named ArcadeNexus.
-2. The folder contains the file index.html with no spaces or different casing.
-3. The folder contains the file styles.css with no spaces or different casing.
-4. The folder contains the file app.js with no spaces or different casing.
-5. The folder contains the file games.js with no spaces or different casing.
-6. The folder contains the file README.md with no spaces or different casing.
-7. The folder contains an assets folder containing an images folder and an audio folder.
-8. The assets images folder contains the logo.svg file.
-9. The assets images folder contains the ttt_card.png file.
-10. The assets images folder contains the snake_card.png file.
-11. The assets images folder contains the memory_card.png file.
-12. The assets audio folder contains the click.mp3 file.
-13. The assets audio folder contains the score.mp3 file.
-14. The assets audio folder contains the gameover.mp3 file.
-15. The assets audio folder contains the cyber_beats.mp3 file.
-16. The index.html file uses semantic HTML tags including header, main, section, article, and footer.
-17. The index.html file does not import any external framework script including React, Vue, or jQuery.
-18. The HTML code has no inline JavaScript event handlers in the markup.
-19. All image tags in index.html contain a non empty alt attribute.
-20. The styles.css file defines CSS variables in the root selector for the four brand colors.
-21. The background color of the body selector is defined as #0B0C10.
-22. The card containers and borders use the color #1F2933.
-23. Glowing highlights and text highlights use the color #66FCF1.
-24. Passive buttons and subtext elements use the color #45A29E.
-25. Headings and logos use the Orbitron Google Font.
-26. Body text and dashboard stats tables use the Inter Google Font.
-27. The layout shifts elements dynamically across screen sizes using CSS Grid or Flexbox.
-28. The game selection grid contains three individual cards.
-29. The site remains fully readable at mobile viewport widths under 576 pixels.
-30. The dashboard displays the total games played across all games.
-31. The dashboard displays the win loss and draw counts for the Tic Tac Toe game.
-32. The dashboard displays the highest score achieved in the Snake game.
-33. The dashboard displays the best moves score achieved in the Memory Match game.
-34. The dashboard has a button labeled Reset Statistics that clears stats from the dashboard.
-35. The Reset Statistics button clears the localStorage key named arcadenexus_stats.
-36. Clicking a game card triggers a modal window that overlays the screen.
-37. The game modal window has a close button that closes the modal.
-38. The Tic Tac Toe game features a 3x3 board layout.
-39. The Tic Tac Toe game allows the player to make a move only in empty squares.
-40. The Tic Tac Toe computer opponent makes moves automatically after the player turns.
-41. The Tic Tac Toe game displays a text notification when the player wins.
-42. The Tic Tac Toe game displays a text notification when a draw occurs.
-43. The Snake game renders the game board inside an HTML5 canvas element.
-44. The Snake game registers WASD or arrow keys for direction control.
-45. The Snake length increases when the head touches the food position.
-46. The Snake game speed increases after every five food items are eaten.
-47. The Snake game triggers a game over screen when the head collides with boundaries.
-48. The Snake game triggers a game over screen when the head collides with its tail.
-49. The Memory Match game displays a grid of sixteen cards.
-50. The Memory Match cards flip face up when clicked showing the card content.
-51. The Memory Match cards remain face up when a matching pair is found.
-52. Mismatched Memory Match cards flip face down automatically after a one second delay.
-53. The Memory Match game displays a moves counter that increments with each pair attempt.
-54. The navigation bar features a button to toggle the global sound state.
-55. Disabling sound via the toggle stops the background music cyber_beats.mp3.
-56. Disabling sound via the toggle prevents click.mp3 from playing on interactions.
-57. Disabling sound via the toggle prevents score.mp3 from playing on game events.
-58. Disabling sound via the toggle prevents gameover.mp3 from playing at the end of games.
+1. The folder is named exactly ojas_sharma and has six files inside.
+2. The folder contains overview.txt scope_of_work.txt assets.pdf reference_image.png instructions.md and rubrics.txt.
+3. The file index.html is written in semantic HTML tags including header main section and footer.
+4. The HTML page does not import any external framework script including React or Vue or jQuery.
+5. The HTML code has no inline JavaScript event handlers in the markup.
+6. All image tags in index.html contain a non empty alt attribute.
+7. The styles.css file defines CSS variables in the root selector for the brand colors.
+8. The background color of the body is defined as #0B0C10.
+9. Card surfaces and card borders use the brand color #1F2833.
+10. Active text and glowing highlights use the brand color #66FCF1.
+11. Passive buttons and subtext elements use the brand color #45A29E.
+12. Headings and logos use the Orbitron Google Font.
+13. Body text and dashboard stats tables use the Inter Google Font.
+14. The layout shifts elements dynamically across screen sizes using CSS Grid or Flexbox.
+15. The game selection grid contains three individual game cards.
+16. The site remains fully readable at mobile viewport widths under 576 pixels.
+17. The dashboard displays the total games played across all games.
+18. The dashboard has a button labeled Reset Statistics that clears statistics from the dashboard.
+19. The Reset Statistics button clears the localStorage key named arcadenexus_stats.
+20. Clicking a game card triggers a modal window that overlays the screen.
+21. The Tic Tac Toe game features a 3x3 board layout.
+22. The Tic Tac Toe computer opponent makes moves automatically after the player turns.
+23. The Snake game renders the game board inside an HTML5 canvas element.
+24. The Snake length increases when the head touches the food position.
+25. The Snake game speed increases after every five food items are eaten.
+26. The Snake game triggers a game over screen when the head collides with boundaries or its tail.
+27. The Memory Match game displays a grid of sixteen cards.
+28. Mismatched Memory Match cards flip face down automatically after a one second delay.
+29. The navigation bar features a button to toggle the global sound state.
+30. Disabling sound via the toggle stops the background music cyber_beats.mp3.
